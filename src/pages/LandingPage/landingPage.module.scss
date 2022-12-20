@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$font: 'Kanit', sans-serif;
+
+@mixin font($color: #f8f8ff, $size: 1em) {
+    color: $color;
+    font-family: $font;
+    font-size: $size;
+}
+
+@mixin size($size: 0px) {
+    width: $size;
+    height: $size;
+}
+
+%area {
+    width: 80vw;
+    height: 100vh;
+}
+
+// @mixin area($bgcolor: DarkGray) {
+//     background: $bgcolor;
+//     @extend %area;
+// }
+
+.container {
+
+    width: 100vw;
+    height: 200vh;
+    background-image: linear-gradient(to bottom, #282f4b, #14162a, #2b1d3d);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .area_1 {
+        @extend %area;
+        // background-image: linear-gradient(to bottom, #282f4b, #14162a);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        z-index: 1;
+
+        .welcomeText {
+            width: 600px;
+            height: 300px;
+
+            .header {
+                @include font($size: 3em);
+                font-weight: 200;
+                letter-spacing: 0.1em;
+                line-height: 1.1em;
+            }
+
+            .content {
+                @include font($color: #f8f8ff7f, $size: 1.5em);
+                font-weight: 200;
+                margin-top: 1em;
+                // line-height: 1.1em;
+            }
+        }
+
+        .myIMG {
+
+            .image {
+
+                @include size($size: 60vh);
+                clip-path: circle();
+                background-color: #2b3351;
+                z-index: 2;
+                position: absolute;
+
+                img {
+                    height: inherit;
+                    transform: translateX(-10%);
+                }
+            }
+
+            .backCircle {
+                @include size($size: 50vh);
+                // background-color: #3c4566;
+                border: 2px solid #3c4566;
+                border-radius: 15%;
+                // clip-path: circle();
+                // transform: translate(-30%, -30%);
+            }
+        }
+    }
+
+    .area_2 {
+        @extend %area;
+        // background-image: linear-gradient(to bottom, #14162a, #2b1d3d);
+        z-index: 1;
+    }
+}
+
+

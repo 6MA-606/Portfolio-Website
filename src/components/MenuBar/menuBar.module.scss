@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$font: 'Kanit', sans-serif;
+
+@mixin font($color: #f8f8ff, $size: 1em) {
+    color: $color;
+    font-family: $font;
+    font-size: $size;
+}
+
+@mixin size($size: 0px) {
+    width: $size;
+    height: $size;
+}
+
+.container {
+    width: 80vw;
+    height: 50px;
+    position: fixed;
+    top: 30px;
+    // border-radius: 17px;
+    // border: 1px dashed red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+
+    .logo {
+        @include font($size: 1.5em);
+        margin: 0 1em;
+    }
+
+    .right {
+
+        display: flex;
+        align-items: center;
+
+        .project {
+            @include font($size: 1em);
+            font-weight: 200;
+            letter-spacing: 0.1em;
+            margin: 0 1em;
+        }
+    
+        .profile {
+            height: 40px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            border: 1px solid rgb(187, 117, 233);
+            border-radius: 7px;
+            padding: 0 1.5em;
+            margin: 0 1em;
+    
+            .profileText {
+                margin-right: .5em;
+                @include font($size: 1em);
+                font-weight: 200;
+                letter-spacing: 0.1em;
+            }
+    
+            .profileIMG {
+                @include size($size: 30px);
+                clip-path: circle();
+                
+                img {
+                    @include size($size: inherit)
+                }
+            }
+        }
+    } 
+}
