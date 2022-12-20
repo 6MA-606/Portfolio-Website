@@ -8,18 +8,23 @@ const LandingPage = () => {
         <div className={ styles.container }>
             <MenuBar />
             <div className={ styles.area_1 }>
-                <div className={ styles.welcomeText }>
+                <motion.div
+                    className={ styles.welcomeText }
+                    initial={{ x: "-20%", opacity: "0%" }}
+                    animate={{ x: "0%", opacity: "100%" }}
+                    transition={{ delay: 1 ,duration: 2 }}
+                >
                     <div className={ styles.header }>Welcome to<br />Sittha Manittayakul<br />Portfolio</div>
                     <div className={ styles.content }>
                         Hello everyone! this is my first portfolio website.<br />
                         Let's go! My information here!
                     </div>
-                </div>
+                </motion.div>
                 <motion.div
                     className={ styles.myIMG }
                     initial={{ x: "20%", opacity: "0%" }}
                     animate={{ x: "0%", opacity: "100%" }}
-                    transition={{ duration: 2 }}
+                    transition={{ delay: 1 ,duration: 2 }}
                 >
                     <motion.div
                         className={ styles.image }
