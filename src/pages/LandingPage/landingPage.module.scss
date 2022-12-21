@@ -95,7 +95,18 @@ $font: 'Kanit', sans-serif;
     .area_2 {
         @extend %area;
         // background-image: linear-gradient(to bottom, #14162a, #2b1d3d);
+        display: flex;
+        align-items: center;
         z-index: 1;
+        .left {
+
+        }
+
+        .right {
+            width: 600px;
+            height: 300px;
+            border: 1px dashed red;
+        }
     }
 }
 

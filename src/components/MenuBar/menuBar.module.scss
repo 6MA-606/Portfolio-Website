@@ -83,7 +83,6 @@ $font: 'Kanit', sans-serif;
             .profileText {
                 @include font($color: #252525, $size: 1em);
             }
-
         }
 
         .profile:active {

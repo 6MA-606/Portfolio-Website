@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import MenuBar from '../../components/MenuBar/MenuBar';
 import me from '../../assets/me.png';
 import IconBtn from '../../components/IconBtn/IconBtn';
+import graphic1 from '../../assets/left.svg'
 
 const LandingPage = () => {
 
@@ -92,7 +93,12 @@ const LandingPage = () => {
                     ></motion.div>
                 </motion.div>
             </div>
-            <div className={ styles.area_2 }></div>
+            <div className={ styles.area_2 }>
+                <div className={ styles.left }>
+                    <img src={ graphic1 } alt="graphic1" />
+                </div>
+                <div className={ styles.right }></div>
+            </div>
         </div>
     );
 }
