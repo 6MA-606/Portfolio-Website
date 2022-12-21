@@ -24,6 +24,8 @@ $font: 'Kanit', sans-serif;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
+    user-select: none;
+    -webkit-user-select: none;
 
     .logo {
         @include font($size: 1.5em);
@@ -44,29 +46,48 @@ $font: 'Kanit', sans-serif;
     
         .profile {
             height: 40px;
+            background-color: #f8f8f800;
             box-sizing: border-box;
             display: flex;
             align-items: center;
-            border: 1px solid rgb(187, 117, 233);
+            border: 1px solid #f8f8ff;
             border-radius: 7px;
             padding: 0 1.5em;
             margin: 0 1em;
+            cursor: pointer;
+            transition: .25s;
     
             .profileText {
                 margin-right: .5em;
                 @include font($size: 1em);
                 font-weight: 200;
                 letter-spacing: 0.1em;
+                pointer-events: none;
             }
     
             .profileIMG {
                 @include size($size: 30px);
                 clip-path: circle();
+                pointer-events: none;
                 
                 img {
-                    @include size($size: inherit)
+                    @include size($size: inherit);
                 }
             }
+        }
+
+        .profile:hover {
+            background-color: #f8f8ffff;
+            box-shadow: 0px 0px 10px 0px #f8f8ff;
+            
+            .profileText {
+                @include font($color: #252525, $size: 1em);
+            }
+
+        }
+
+        .profile:active {
+            transform: scale(0.9);
         }
     } 
 }
