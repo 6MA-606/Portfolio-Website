@@ -1,14 +1,17 @@
 import styles from './landingPage.module.scss';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, transform, useScroll, useTransform } from 'framer-motion';
 import MenuBar from '../../components/MenuBar/MenuBar';
 import me from '../../assets/me.png';
 import IconBtn from '../../components/IconBtn/IconBtn';
 import graphic1 from '../../assets/left.svg'
+import graphic2 from '../../assets/right.svg'
+import Link from '../../components/Link/Link';
+import Button from '../../components/Button/Button';
 
 const LandingPage = () => {
 
     const { scrollYProgress } = useScroll();
-    const scale = useTransform(scrollYProgress, [0, 1], [1, 2]);
+    const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
     const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
     return (
@@ -17,8 +20,6 @@ const LandingPage = () => {
             <div className={ styles.area_1 }>
                 <motion.div
                     className={ styles.welcomeText }
-                    initial={{ x: "-20%", opacity: "0%" }}
-                    animate={{ x: "0%", opacity: "100%" }}
                     transition={{ delay: 1 ,duration: 2 }}
                     style={{ scale, opacity }}
                 >
@@ -72,9 +73,9 @@ const LandingPage = () => {
                 </motion.div>
                 <motion.div
                     className={ styles.myIMG }
-                    initial={{ x: "20%", opacity: "0%" }}
-                    animate={{ x: "0%", opacity: "100%" }}
-                    transition={{ delay: 1 ,duration: 2 }}
+                    // initial={{ x: "20%", opacity: "0%" }}
+                    // animate={{ x: "0%", opacity: "100%" }}
+                    transition={{ delay: 1, duration: 2 }}
                     style={{ scale, opacity }}
                 >
                     <motion.div
@@ -93,12 +94,63 @@ const LandingPage = () => {
                     ></motion.div>
                 </motion.div>
             </div>
-            <div className={ styles.area_2 }>
+            <motion.div
+                className={ styles.area_2 }
+                style={{
+                    opacity: useTransform(scrollYProgress, [0, .33, .66, 1], [0, 1, 1, 0])
+                }}
+            >
                 <div className={ styles.left }>
-                    <img src={ graphic1 } alt="graphic1" />
+                    <motion.img
+                        src={ graphic1 }
+                        alt="graphic1"
+                        initial={{ y: "20%" }}
+                        animate={{ y: "25%", originX: 0, originY: 1 }}
+                        transition={{ duration: 2.75, repeat: Infinity, repeatType: "mirror"}}
+                        style={{
+                            rotate: useTransform(scrollYProgress, [0, .33], ["-15deg", "0deg"]),
+                            origin: "left"
+                        }}
+                    />
+                    <motion.img
+                        src={ graphic2 }
+                        alt="graphic2"
+                        initial={{ y: "-20%", x: "35%" }}
+                        animate={{ y: "-25%", x: "35%", originX: 1, originY: 1  }}
+                        transition={{ duration: 3, repeat: Infinity, repeatType: "mirror"}}
+                        style={{
+                            rotate: useTransform(scrollYProgress, [0, .33], ["15deg", "0deg"]),
+                            origin: "right"
+                        }}
+                    />
                 </div>
-                <div className={ styles.right }></div>
-            </div>
+                <div className={ styles.right }>
+                <motion.div
+                    transition={{ delay: 1 ,duration: 2 }}
+                    style={{
+                        x: useTransform(scrollYProgress, [0, .33], ["20%", "0%"]),
+                    }}
+                >
+                    <div className={ styles.header }>This Portfolio<br />Created By Using</div>
+                    <div className={ styles.content }>
+                        <Link href="https://reactjs.org" color="#35d7ec">React</Link>,&nbsp;
+                        <Link href="https://vitejs.dev" color="#fff570">Vite</Link>,&nbsp;
+                        <Link href="https://sass-lang.com" color="#fa71ff">Sass</Link>&nbsp;and&nbsp;
+                        <Link href="https://www.framer.com/motion/" color="#cf7ffd">Framer Motion</Link>
+                    </div>
+                    <div className={ styles.repo }>
+                        <Button
+                            icon="Github"
+                            bg="#252525"
+                            hoverShadow="#fff"
+                            to="https://github.com/6MA-606/Portfolio-Website"
+                        >
+                            This Project<br />Repository
+                        </Button>
+                    </div>
+                </motion.div>
+                </div>
+            </motion.div>
         </div>
     );
 }
