@@ -12,7 +12,7 @@ import ProjectCard from '../../components/ProjectCard/ProjectCard';
 const LandingPage = () => {
 
     const { scrollYProgress } = useScroll();
-    const path = "./public/images/project_images/thumbnail/";
+    const path = "images/project_images/thumbnail/";
 
     return (
         <div className={ styles.container }>
