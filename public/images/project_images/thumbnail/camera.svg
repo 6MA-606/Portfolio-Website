@@ -1,0 +1,197 @@
+<svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+    
+    <style>
+
+        @keyframes slider {
+            0%, 30%, 45%, 75%, 90%, 100% { transform: translate(0%, 0%); }
+            40%, 80% { transform: translate(-1.75%, 0%); } 
+            35%, 85% { transform: translate(1.75%, 0%); }
+        }
+
+        #slider {
+            animation: slider 10s infinite;
+        }
+
+        @keyframes rotator {
+            0%, 10%, 25%, 50%, 65%, 100% { transform: translate(0%, 0%); }
+            15%, 60% { transform: translate(-0.75%, 0%); } 
+            20%, 55% { transform: translate(0.75%, 0%); }
+        }
+
+        #rotator {
+            animation: rotator 10s infinite;
+        }
+
+        @keyframes shutter {
+            0%, 70%, 82%, 100% { transform: translate(0%, 0%); }
+            75%, 77% { transform: translate(0%, 1.5%); }
+        }
+
+        #shutter {
+            animation: shutter 10s infinite;
+        }
+
+        @keyframes center_lens {
+            0%, 10%, 25%, 50%, 65%, 100% { transform: scale(1) }
+            15%, 60% { transform: scale(1.1) } 
+            20%, 55% { transform: scale(0.9) }
+        }
+
+        #center_lens {
+            transform-origin: 360px 400px;
+            animation: center_lens 10s infinite;
+        }
+
+        @keyframes around_lens {
+            15%, 60% { transform: scale(0.9) } 
+            20%, 55% { transform: scale(1.1) }
+            0%, 10%, 25%, 50%, 65%, 100% { transform: scale(1) }
+        }
+
+        #around_lens {
+            transform-origin: 360px 400px;
+            animation: around_lens 10s infinite;
+        }
+
+        @keyframes light {
+            0%, 70%, 72%, 74%, 100% { opacity: 0; transform: scale(1); }
+            71%, 73% { opacity: 1; transform: scale(4); }
+        }
+
+        #light {
+            opacity: 0;
+            transform-origin: 216px 332px;
+            animation: light 10s infinite;
+        }
+
+        @keyframes indicator {
+            0%, 70%, 100% { fill: orange }
+            75%, 82%  { fill: #000 }
+        }
+
+        #indicator {
+            animation: indicator 10s infinite;
+        }
+
+    </style>
+    
+    <rect width="720" height="720" />
+    <g id="camera1">
+        <rect width="720" height="720" />
+        <g id="camera">
+            <g id="shutter">
+                <mask style="mask-type:alpha" maskUnits="userSpaceOnUse" x="158" y="201" width="85"
+                    height="36">
+                    <rect x="158.769" y="201.304" width="83.2609" height="34.8182" rx="8"
+                        fill="#EBF3FE" />
+                </mask>
+                <g mask="url(#mask0_0_1)">
+                    <rect x="158.769" y="201.304" width="83.2609" height="34.8182" rx="8"
+                        fill="#EBF3FE" />
+                    <g id="rotator">
+                        <line id="Line 6" x1="211.239" y1="201.304" x2="211.239" y2="249.747" stroke="#C5CBDB"
+                            stroke-width="2" />
+                        <line id="Line 7" x1="189.289" y1="201.304" x2="189.289" y2="249.747" stroke="#C5CBDB"
+                            stroke-width="2" />
+                        <line id="Line 8" x1="174.15" y1="201.304" x2="174.15" y2="249.747" stroke="#C5CBDB"
+                            stroke-width="2" />
+                        <line id="Line 9" x1="226.377" y1="201.304" x2="226.377" y2="249.747" stroke="#C5CBDB"
+                            stroke-width="2" />
+                    </g>
+                </g>
+            </g>
+            <g id="Group 2">
+                <path id="Polygon 1"
+                    d="M509.978 232.716L446.586 288.762L319.803 288.762L256.411 232.716L319.803 176.67L446.586 176.67L509.978 232.716Z"
+                    fill="#FFFEFF" />
+                <path id="Polygon 2"
+                    d="M463.806 230.446L423.5 266.171L342.889 266.171L302.583 230.446L342.889 194.72L423.5 194.72L463.806 230.446Z"
+                    fill="#363B45" />
+                <rect id="Rectangle 3" x="102" y="224.012" width="516.974" height="326.988" rx="40" fill="white" />
+                <rect id="Rectangle 4" x="102" y="387.506" width="516.974" height="163.494" rx="40" fill="#DCEDFF" />
+                <rect id="Rectangle 6" x="102" y="284.565" width="516.974" height="230.103" fill="#363B45" />
+            </g>
+            <circle id="Ellipse 5" cx="170.72" cy="497.672" r="26.6315" fill="#FD314B" stroke="white"
+                stroke-width="6" />
+            <circle id="Ellipse 6" cx="475.23" cy="515.715" r="10.7396" fill="#17161B" stroke="white"
+                stroke-width="5" />
+            <circle id="indicator" cx="237.863" cy="399.396" r="5.11979" fill="#17161B" stroke="white"
+                stroke-width="3" />
+            <g id="sensor">
+                <rect id="Rectangle 8" x="529.658" y="340.704" width="63.581" height="63.581" rx="15" fill="#F4F7FF" />
+                <rect id="Rectangle 9" x="537.227" y="348.273" width="48.4427" height="48.4427" rx="8" fill="#17161B" />
+                <g id="Group 6">
+                    <mask id="mask1_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="544" y="411" width="35"
+                        height="10">
+                        <rect id="Rectangle 13" x="544.796" y="411.854" width="34.0613" height="9.083" rx="4.5415"
+                            fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask1_0_1)">
+                        <rect id="Rectangle 10" x="544.796" y="411.854" width="34.0613" height="9.083" rx="4.5415"
+                            fill="#D9D9D9" />
+                        <g id="slider">
+                            <path id="Rectangle 11" d="M528 411H562V422H528V411Z" fill="#F89D02" />
+                            <rect id="Rectangle 12" x="559.692" y="411.854" width="5.29842" height="9.083" rx="2.64921"
+                                fill="#F9DC65" />
+                        </g>
+                    </g>
+                </g>
+                <rect id="Rectangle 13_2" x="534.956" y="415.638" width="4.5415" height="1.51383" fill="#D9D9D9" />
+                <rect id="Rectangle 14" x="583.399" y="415.638" width="4.5415" height="1.51383" fill="#D9D9D9" />
+                <rect id="Rectangle 15" x="586.427" y="414.125" width="4.5415" height="1.51383"
+                    transform="rotate(90 586.427 414.125)" fill="#D9D9D9" />
+            </g>
+            <g id="flash">
+                <mask id="mask2_0_1" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="141" y="304" width="84"
+                    height="125">
+                    <rect id="Rectangle 7" x="141.36" y="304.372" width="83.2609" height="124.134" rx="20"
+                        fill="#D1E3FC" />
+                </mask>
+                <g mask="url(#mask2_0_1)">
+                    <rect id="Rectangle 18" x="141.36" y="304.372" width="83.2609" height="124.134" rx="20"
+                        fill="#D1E3FC" />
+                    <line id="Line 11" x1="224.62" y1="373.494" x2="141.36" y2="373.494" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <line id="Line 16" x1="224.62" y1="387.119" x2="141.36" y2="387.119" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <line id="Line 17" x1="224.62" y1="400.743" x2="141.36" y2="400.743" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <line id="Line 18" x1="224.62" y1="414.368" x2="141.36" y2="414.368" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <line id="Line 12" x1="224.62" y1="360.626" x2="141.36" y2="360.626" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <line id="Line 13" x1="224.62" y1="348.516" x2="141.36" y2="348.516" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <line id="Line 14" x1="224.62" y1="334.891" x2="141.36" y2="334.891" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <line id="Line 15" x1="224.62" y1="321.267" x2="141.36" y2="321.267" stroke="#C5CBDB"
+                        stroke-width="2" />
+                    <rect id="Rectangle 17_2" x="159.526" y="304.372" width="47.6858" height="124.134" rx="20"
+                        fill="url(#paint0_linear_0_1)" />
+                </g>
+            </g>
+            <g id="lens">
+                <circle id="Ellipse 1" cx="360.184" cy="400.184" r="102.184" fill="#F4F7FF" />
+                <circle id="Ellipse 2" cx="360.562" cy="399.805" r="88.9377" fill="#363943" />
+                <circle id="around_lens" cx="360.184" cy="400.184" r="60.0672" fill="#363943" stroke="#17161B"
+                    stroke-width="4" />
+                <g id="center_lens">
+                    <circle id="Ellipse 4" cx="360.184" cy="400.184" r="37.0889" fill="#17161B" />
+                    <path id="Vector 1"
+                        d="M332.935 393.372C333.017 382.84 342.068 376.475 348.452 375.584C355.191 376.56 361.289 380.172 359.048 393.372C356.37 409.151 348.824 412.855 340.504 411.159C337.317 408.905 332.863 402.483 332.935 393.372Z"
+                        fill="#242328" />
+                </g>
+            </g>
+            <path id="light"
+                d="M260.396 331.698C235.71 331.698 215.698 311.686 215.698 287C215.698 311.686 195.686 331.698 171 331.698C195.686 331.698 215.698 351.71 215.698 376.396C215.698 351.71 235.71 331.698 260.396 331.698Z"
+                fill="white" />
+        </g>
+    </g>
+    <defs>
+        <linearGradient id="paint0_linear_0_1" x1="183.369" y1="304.372" x2="183.369" y2="428.506"
+            gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFFEFF" stop-opacity="0" />
+            <stop offset="1" stop-color="#FFFEFF" stop-opacity="0.5" />
+        </linearGradient>
+    </defs>
+</svg>

@@ -37,11 +37,12 @@ $font: 'Kanit', sans-serif;
         display: flex;
         align-items: center;
 
-        .project {
+        .btn {
             @include font($size: 1em);
             font-weight: 200;
             letter-spacing: 0.1em;
             margin: 0 1em;
+            cursor: pointer;
         }
     
         .profile {

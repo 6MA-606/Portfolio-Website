@@ -139,6 +139,18 @@ $font: 'Kanit', sans-serif;
             }
         }
     }
+
+    .area_3 {
+        @extend %area;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
+        position: absolute;
+        top: 100vh;
+        box-sizing: border-box;
+        gap: 3rem;
+    }
 }
 
 

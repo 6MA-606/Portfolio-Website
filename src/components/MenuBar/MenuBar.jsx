@@ -1,8 +1,12 @@
 import styles from './menuBar.module.scss';
 import profile from '../../assets/profile1.jpg'
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll'
 
-const MenuBar = () => {
+const MenuBar = (props) => {
+
+    const { header, btnLabel, to, smooth } = props;
+
     return (
         <motion.div
             className={ styles.container }
@@ -18,11 +22,17 @@ const MenuBar = () => {
                 duration: 1.5
             }}
         >
-            <div className={ styles.logo }>ZYXMA</div>
+            <div className={ styles.logo }>{ header }</div>
             <div className={ styles.right }>
-                <div className={ styles.project }>Project</div>
+                <div className={ styles.btn }>
+                    <Link to={ to } smooth={ smooth } duration={2500}>
+                        { btnLabel }
+                    </Link>
+                </div>
                 <div className={ styles.profile }>
-                    <div className={ styles.profileText }>Profile</div>
+                    <div className={ styles.profileText }>
+                        Profile
+                    </div>
                     <div className={ styles.profileIMG }>
                         <img src={ profile } alt="profile" />
                     </div>

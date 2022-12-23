@@ -5,24 +5,31 @@ import me from '../../assets/me.png';
 import IconBtn from '../../components/IconBtn/IconBtn';
 import graphic1 from '../../assets/left.svg'
 import graphic2 from '../../assets/right.svg'
-import Link from '../../components/Link/Link';
+import TextLink from '../../components/TextLink/TextLink';
 import Button from '../../components/Button/Button';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 const LandingPage = () => {
 
     const { scrollYProgress } = useScroll();
-    const scale = useTransform(scrollYProgress, [0, 0.2], [1, 1.1]);
-    const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+    const path = "./public/images/project_images/thumbnail/";
 
     return (
         <div className={ styles.container }>
-            <MenuBar />
-            <div className={ styles.area_1 }>
-                <motion.div
-                    className={ styles.welcomeText }
-                    transition={{ delay: 1 ,duration: 2 }}
-                    style={{ scale, opacity }}
-                >
+            <MenuBar
+                header="ZYXMA"
+                btnLabel="Project"
+                to="project"
+                smooth
+            />
+            <motion.div
+                className={ styles.area_1 }
+                style={{
+                    opacity: useTransform(scrollYProgress, [0, 0.33], [1, 0]),
+                    y: useTransform(scrollYProgress, [0, 0.33], ["0%", "-30%"])
+                }}
+            >
+                <div className={ styles.welcomeText }>
                     <div className={ styles.header }>Welcome to<br />Sittha Manittayakul<br />Portfolio</div>
                     <div className={ styles.content }>
                         Hello everyone! this is my first portfolio website.<br />
@@ -70,14 +77,8 @@ const LandingPage = () => {
                             hoverShadow="#0a66c2"
                         />
                     </div>
-                </motion.div>
-                <motion.div
-                    className={ styles.myIMG }
-                    // initial={{ x: "20%", opacity: "0%" }}
-                    // animate={{ x: "0%", opacity: "100%" }}
-                    transition={{ delay: 1, duration: 2 }}
-                    style={{ scale, opacity }}
-                >
+                </div>
+                <div className={ styles.myIMG }>
                     <motion.div
                         className={ styles.image }
                         initial={{ y: "-2%" }}
@@ -92,12 +93,13 @@ const LandingPage = () => {
                         animate={{ rotate: "360deg" }}
                         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                     ></motion.div>
-                </motion.div>
-            </div>
+                </div>
+            </motion.div>
             <motion.div
                 className={ styles.area_2 }
                 style={{
-                    opacity: useTransform(scrollYProgress, [0, .33, .66, 1], [0, 1, 1, 0])
+                    opacity: useTransform(scrollYProgress, [0, .33, .66, 1], [0, 1, 1, 0]),
+                    y: useTransform(scrollYProgress, [.66, 1], ["0%", "-30%"])
                 }}
             >
                 <div className={ styles.left }>
@@ -133,10 +135,10 @@ const LandingPage = () => {
                 >
                     <div className={ styles.header }>This Portfolio<br />Created By Using</div>
                     <div className={ styles.content }>
-                        <Link href="https://reactjs.org" color="#35d7ec">React</Link>,&nbsp;
-                        <Link href="https://vitejs.dev" color="#fff570">Vite</Link>,&nbsp;
-                        <Link href="https://sass-lang.com" color="#fa71ff">Sass</Link>&nbsp;and&nbsp;
-                        <Link href="https://www.framer.com/motion/" color="#cf7ffd">Framer Motion</Link>
+                        <TextLink href="https://reactjs.org" color="#35d7ec">React</TextLink>,&nbsp;
+                        <TextLink href="https://vitejs.dev" color="#fff570">Vite</TextLink>,&nbsp;
+                        <TextLink href="https://sass-lang.com" color="#fa71ff">Sass</TextLink>&nbsp;and&nbsp;
+                        <TextLink href="https://www.framer.com/motion/" color="#cf7ffd">Framer Motion</TextLink>
                     </div>
                     <div className={ styles.repo }>
                         <Button
@@ -150,6 +152,30 @@ const LandingPage = () => {
                     </div>
                 </motion.div>
                 </div>
+            </motion.div>
+            <motion.div
+                name="project"
+                className={ styles.area_3 }
+                style={{
+                    opacity: useTransform(scrollYProgress, [.66, 1], [0, 1])
+                }}
+            >
+                <ProjectCard
+                    thumbnail={ path + "toolbox.svg" }
+                    link="https://zyxma-toolbox.netlify.app"
+                    repo="https://github.com/6MA-606/Project-ZYXMA-Toolbox-React"
+                    bg="linear-gradient(to bottom, #252525, #333)"
+                >
+                    ZYXMA-Toolbox
+                </ProjectCard>
+                <ProjectCard
+                    thumbnail={ path + "camera.svg" }
+                    link="https://int102.sit.kmutt.ac.th/project/nQL9E/"
+                    repo="https://github.com/6MA-606/INT102-Diary-Project"
+                    bg="linear-gradient(to bottom, #888, #aaa)"
+                >
+                    My Diary
+                </ProjectCard>
             </motion.div>
         </div>
     );
