@@ -70,11 +70,12 @@ $font: 'Kanit', sans-serif;
 
             .image {
 
-                @include size($size: 60vh);
+                @include size($size: 32rem);
                 clip-path: circle();
                 background-color: #2b3351;
+                position: relative;
                 z-index: 2;
-                position: absolute;
+                // position: absolute;
 
                 img {
                     height: inherit;
@@ -83,19 +84,18 @@ $font: 'Kanit', sans-serif;
             }
 
             .backCircle {
-                @include size($size: 50vh);
-                // background-color: #3c4566;
+                @include size($size: 25rem);
                 border: 2px solid #3c4566;
                 border-radius: 15%;
-                // clip-path: circle();
-                // transform: translate(-30%, -30%);
+                position: relative;
+                z-index: 1;
+                // position: absolute;
             }
         }
     }
 
     .area_2 {
         @extend %area;
-        // background-image: linear-gradient(to bottom, #14162a, #2b1d3d);
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -104,13 +104,20 @@ $font: 'Kanit', sans-serif;
         top: 50vh;
 
         .left {
-            width: 800px;
+            flex: 6;
+
+            .graphic1 {
+                width: 30rem;
+            }
+
+            .graphic2 {
+                width: 34rem;
+            }
         }
 
         .right {
-            width: 600px;
+            flex: 4;
             height: 300px;
-            // border: 1px dashed red;
 
             .header {
                 @include font($size: 3em);
@@ -153,4 +160,8 @@ $font: 'Kanit', sans-serif;
     }
 }
 
-
+@media (max-width: 1024px) {
+    .right {
+        flex: 3;
+    }
+}

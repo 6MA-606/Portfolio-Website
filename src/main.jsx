@@ -7,6 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import "./styles/index.scss";
+import Profile from './pages/Profile/Profile';
 
 
 
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   </Router>
 )

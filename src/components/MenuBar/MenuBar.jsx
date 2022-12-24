@@ -1,11 +1,16 @@
 import styles from './menuBar.module.scss';
 import profile from '../../assets/profile1.jpg'
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll'
+import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 const MenuBar = (props) => {
 
     const { header, btnLabel, to, smooth } = props;
+
+    const handleClick = () => {
+        window.location = '/profile';
+    }
 
     return (
         <motion.div
@@ -29,7 +34,10 @@ const MenuBar = (props) => {
                         { btnLabel }
                     </Link>
                 </div>
-                <div className={ styles.profile }>
+                <div 
+                    className={ styles.profile }
+                    onClick={ handleClick }
+                >
                     <div className={ styles.profileText }>
                         Profile
                     </div>

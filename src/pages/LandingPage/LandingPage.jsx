@@ -78,22 +78,23 @@ const LandingPage = () => {
                         />
                     </div>
                 </div>
-                <div className={ styles.myIMG }>
-                    <motion.div
-                        className={ styles.image }
-                        initial={{ y: "-2%" }}
-                        animate={{ y: "2%" }}
-                        transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
-                    >
+                <motion.div
+                    className={ styles.myIMG }
+                    initial={{ y: "22%" }}
+                    animate={{ y: "26%" }}
+                    transition={{ duration: 3, repeat: Infinity, repeatType: 'reverse' }}
+                >
+                    <div className={ styles.image }>
                         <img src={ me } alt="me" />
-                    </motion.div>
+                    </div>
                     <motion.div
                         className={ styles.backCircle }
-                        initial={{ rotate: "0deg", x: "30%", y: "30%"}}
+                        initial={{ rotate: "0deg" }}
                         animate={{ rotate: "360deg" }}
                         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        style={{ x: "40%", y: "-80%"}}
                     ></motion.div>
-                </div>
+                </motion.div>
             </motion.div>
             <motion.div
                 className={ styles.area_2 }
@@ -104,6 +105,7 @@ const LandingPage = () => {
             >
                 <div className={ styles.left }>
                     <motion.img
+                        className={ styles.graphic1 }
                         src={ graphic1 }
                         alt="graphic1"
                         initial={{ y: "20%" }}
@@ -115,6 +117,7 @@ const LandingPage = () => {
                         }}
                     />
                     <motion.img
+                        className={ styles.graphic2 }
                         src={ graphic2 }
                         alt="graphic2"
                         initial={{ y: "-20%", x: "35%" }}

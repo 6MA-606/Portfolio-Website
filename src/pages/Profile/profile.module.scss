@@ -1,0 +1,21 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #282f4b, #14162a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .myPic {
+        img {
+            width: 20rem;
+            clip-path: circle();
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 10px;
+    }
+}
